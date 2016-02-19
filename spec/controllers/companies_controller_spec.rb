@@ -25,10 +25,9 @@ RSpec.describe CompaniesController, type: :controller do
  		before(:each) do
  			@companies = []
  			10.times do
- 				@company = create(:company)
- 				@companies.push(@company)
+ 				@companies.push(create(:company))
  			end
- 			get :index, {companies: @companies}
+ 			get :index
  		end
  		it 'responds successfully with an HTTP 200 status code'do
  			expect(response).to have_http_status(200)
